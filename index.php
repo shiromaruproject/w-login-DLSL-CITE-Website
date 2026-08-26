@@ -1,3 +1,7 @@
+<?php
+// Must run before any HTML output so the login session cookie can be set.
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,6 +9,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>De La Salle Lipa - CITE</title>
+
+    <link rel="stylesheet" href="assets/css/nav-auth.css">
 
     <style>
         :root {
@@ -524,43 +530,7 @@
 <body>
 
 
-    <!-- Navigation -->
-    <nav>
-        <div class="logo">DE LA SALLE LIPA</div>
-
-        <ul>
-            <li>
-                <a href="index.html#home" class="nav-link active">HOME</a>
-            </li>
-
-            <li>
-                <a href="index.html#programs" class="nav-link">PROGRAMS</a>
-            </li>
-
-            <li>
-                <a href="index.html#activities" class="nav-link">ACTIVITIES</a>
-            </li>
-
-            <li>
-                <a href="index.html#about" class="nav-link">ABOUT</a>
-            </li>
-
-            <li>
-                <a href="login.php" class="nav-link">LOGIN</a>
-            </li>
-
-            <li>
-                <a href="register.php" class="nav-link">REGISTER</a>
-            </li>
-
-            <li>
-                <a href="https://my.dlsl.edu.ph/padmission?campus=WjlBbzRFTnhBZGkxdG50VmxUTVRjdz09&dept="
-                    class="apply-btn" target="_blank">
-                    APPLY NOW
-                </a>
-            </li>
-        </ul>
-    </nav>
+    <?php $activeNav = 'home'; include 'includes/nav.php'; ?>
 
     <!-- Page 1: Home -->
     <section id="home">
@@ -1290,7 +1260,7 @@
             });
 
             const activeLink = document.querySelector(
-                `.nav-link[href="#${id}"]`
+                `.nav-link[href$="#${id}"]`
             );
 
             if (activeLink) {
@@ -1381,7 +1351,7 @@
 
     </script>
 
-
+    <script src="assets/js/nav-auth.js"></script>
 
 </body>
 

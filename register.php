@@ -1,4 +1,5 @@
 <?php
+session_start();
 require 'db.php';
 
 $error = "";
@@ -36,6 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register - De La Salle Lipa CITE</title>
+    <link rel="stylesheet" href="assets/css/nav-auth.css">
     <style>
         :root {
             --dlsl-green: #1b5e20;
@@ -210,19 +212,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
 
-    <!-- Navigation -->
-    <nav>
-        <div class="logo">DE LA SALLE LIPA</div>
-        <ul>
-            <li><a href="index.html#home" class="nav-link">HOME</a></li>
-            <li><a href="index.html#programs" class="nav-link">PROGRAMS</a></li>
-            <li><a href="index.html#activities" class="nav-link">ACTIVITIES</a></li>
-            <li><a href="index.html#about" class="nav-link">ABOUT</a></li>
-            <li><a href="login.php" class="nav-link">LOGIN</a></li>
-            <li><a href="register.php" class="nav-link" style="color: var(--dlsl-green);">REGISTER</a></li>
-            <li><a href="https://my.dlsl.edu.ph/padmission" class="apply-btn" target="_blank">APPLY NOW</a></li>
-        </ul>
-    </nav>
+    <?php $activeNav = 'register'; include 'includes/nav.php'; ?>
 
     <div class="form-wrapper">
         <div class="form-container">
@@ -289,6 +279,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
         </div>
     </div>
+
+    <script src="assets/js/nav-auth.js"></script>
 
 </body>
 </html>

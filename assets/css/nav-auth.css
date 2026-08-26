@@ -1,0 +1,85 @@
+/* ==========================================================
+   Auth navigation: active link + username dropdown
+   Shared across index.php, login.php, register.php, profile.php
+   ========================================================== */
+
+/* Active nav link (used when a page doesn't already define it) */
+.nav-link.active {
+    color: var(--dlsl-green);
+}
+
+/* Wrapper for the username + dropdown */
+.auth-menu {
+    position: relative;
+}
+
+.username-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: none;
+    border: none;
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: var(--text-dark);
+    cursor: pointer;
+    padding: 8px 5px;
+    transition: color 0.3s ease;
+}
+
+.username-btn:hover,
+.username-btn[aria-expanded="true"] {
+    color: var(--dlsl-green);
+}
+
+.username-btn .caret {
+    font-size: 12px;
+    line-height: 1;
+    transition: transform 0.2s ease;
+}
+
+.username-btn[aria-expanded="true"] .caret {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: calc(100% + 14px);
+    right: 0;
+    background: white;
+    list-style: none;
+    margin: 0;
+    padding: 8px 0;
+    min-width: 150px;
+    border-radius: 6px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.18);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+    z-index: 1001;
+}
+
+.dropdown-menu.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-item {
+    display: block;
+    padding: 10px 18px;
+    color: var(--dlsl-red);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 13px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    transition: background-color 0.2s ease;
+}
+
+.dropdown-item:hover {
+    background-color: #f9f9f9;
+}

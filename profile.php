@@ -11,6 +11,7 @@ if (!isset($_SESSION['user_id'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile - De La Salle Lipa CITE</title>
+    <link rel="stylesheet" href="assets/css/nav-auth.css">
     <style>
         :root {
             --dlsl-green: #1b5e20;
@@ -165,17 +166,7 @@ if (!isset($_SESSION['user_id'])) {
 </head>
 <body>
 
-    <!-- Navigation -->
-    <nav>
-        <div class="logo">DE LA SALLE LIPA</div>
-        <ul>
-            <li><a href="index.html#home" class="nav-link">HOME</a></li>
-            <li><a href="index.html#programs" class="nav-link">PROGRAMS</a></li>
-            <li><a href="index.html#activities" class="nav-link">ACTIVITIES</a></li>
-            <li><a href="index.html#about" class="nav-link">ABOUT</a></li>
-            <li><a href="logout.php" class="logout-btn">LOGOUT</a></li>
-        </ul>
-    </nav>
+    <?php include 'includes/nav.php'; ?>
 
     <div class="profile-wrapper">
         <div class="profile-container">
@@ -201,10 +192,12 @@ if (!isset($_SESSION['user_id'])) {
             </div>
 
             <div class="btn-container">
-                <a href="index.html" class="home-btn">Go to Home Page</a>
+                <a href="index.php" class="home-btn">Go to Home Page</a>
             </div>
         </div>
     </div>
+
+    <script src="assets/js/nav-auth.js"></script>
 
 </body>
 </html>
